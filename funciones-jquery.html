@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        #pshow,
+        #pslidedown,
+        #pfadein {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class="row p-3 mb-3">
+            <div id="fxhide" class="col p-6">
+                <h2>Fx Hide</h2>
+                <p id="parrhide">Haz click en este boton para esconder el texto</p>
+                <button id="btn-hide">Hide!</button>
+            </div>
+            <div id="fxshow" class="col">
+                <h2>Fx Show: Haz click en el botón!</h2>
+                <p id="pshow">Esta fx <b>mostrará</b> lo que esté oculto</p>
+                <button id="btn-show">Show!</button>
+            </div>
+            <div id="fxtoggle" class="col">
+                <h2>Fx Toggle</h2>
+                <p id="ptoggle">Haz click en este boton para <b>mostrar u ocultar</b> el objeto</p>
+                <button id="btn-toggle">Toggle!</button>
+            </div>
+        </div>
+        <div id="fxslidedown">
+            <h2>Fx Slide Down: Haz click en el botón!</h2>
+            <p id="pslidedown">Esto despliega un menú con animación!</p>
+            <button id="btn-slidedown">Slide Down!</button>
+        </div>
+        <div id="fxslideup" class="impares">
+            <h2>Fx Slide Up</h2>
+            <p id="pslideup">Esto repliega un menú con animación!</p>
+            <button id="btn-slideup">Slide Up!</button>
+        </div>
+        <div class="fxfadeIn">
+            <h2>Fade In</h2>
+            <p id="pfadein">Esta función <b>aparece</b> el objeto</p>
+            <button id="btn-fadein">Fade In!</button>
+        </div>
+        <div class="fxfadeOut">
+            <h2>Fade Out</h2>
+            <p id="pfadeout">Esta función <b>desvanece</b> el objeto</p>
+            <button id="btn-fadeout">Fade Out!</button>
+        </div>
+        <div class="fxaddClass">
+            <h2>Fx Add Class</h2>
+            <p id="paddclass">Esta función agrega clases CSS (bg-danger)</p>
+            <button id="btn-addclass">Add Class!</button>
+        </div>
+        <div class="fxbefore">
+            <h2></h2>
+            <p id="pbefore">Esta función agrega elementos ANTES</p>
+            <button id="btn-before">Before</button>
+        </div>
+        <div class="fxafter">
+            <h2></h2>
+            <p id="pafter">Esta función agrega elementos DESPUES</p>
+            <button id="btn-after">After</button>
+        </div>
+        <div class="fxappend">
+            <h2></h2>
+            <p id=""></p>
+            <button id=""></button>
+        </div>
+        <div class="fxhtml">
+            <h2></h2>
+            <p id=""></p>
+            <button id=""></button>
+        </div>
+        <div class="fxattr">
+            <h2></h2>
+            <p id=""></p>
+            <button id=""></button>
+        </div>
+        <div class="fxval">
+            <h2></h2>
+            <p id=""></p>
+            <button id=""></button>
+        </div>
+        <div class="fxtext">
+            <h2></h2>
+            <p id=""></p>
+            <button id=""></button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        // 01 HID
+        $(document).ready(function () {
+            $('#btn-hide').on('click', function () {
+                $('#parrhide').hide();
+            })
+
+            // 02 SHOW
+            $('#btn-show').on('click', function () {
+                $('#pshow').show();
+            })
+
+            // 03 TOGGLE
+            $('#btn-toggle').on('click', function () {
+                $('#ptoggle').toggle();
+            })
+
+            // 04 SLIDE DOWN
+            $('#btn-slidedown').on('click', function () {
+                $('#pslidedown').slideDown();
+            })
+
+            // 05 SLIDE UP
+            $('#btn-slideup').on('click', function () {
+                $('#pslideup').slideUp();
+            })
+
+            // 06 FADE IN
+            $('#btn-fadein').on('click', function () {
+                $('#pfadein').fadeIn();
+            })
+
+            // 07 FADE OUT
+            $('#btn-fadeout').on('click', function () {
+                $('#pfadeout').fadeOut();
+            })
+
+            // 08 ADD CLASS
+            $('#btn-addclass').on('click', function () {
+                $('#paddclass').addClass('bg-danger');
+            })
+
+            // 09 BEFORE
+            $('#btn-before').on('click', function () {
+                $('#pbefore').before('<p>Esto se inserta ANTES del elemento</p>');
+            })
+
+            // 10 AFTER
+            $('#btn-after').on('click', function () {
+                $('#pafter').after('<p>Esto se inserta DESPUÉS del elemento</p>');
+            })
+
+            // 11 APPEND
+            $('#btn-append').on('click', function () {
+                $('#pappend').append('bg-danger');
+            })
+
+            // 12 HTML
+            $('#btn-html').on('click', function () {
+                $('#phtml').html('bg-danger');
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
