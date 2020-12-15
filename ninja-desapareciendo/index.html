@@ -13,33 +13,33 @@
     <div class="container bg-dark">
         <div class="row-cols-4 mx-auto">
             <div class="col d-inline-block rounded m-2 p-3" style="object-fit: cover; width:20%">
-                <img src="maxresdefault.jpg" class="img-thumbnail">
+                <img src="maxresdefault.jpg" class="img-thumbnail" data-alt-src="alt.jpg">
             </div>
             <div class="col d-inline-block rounded mx-auto p-3" style="object-fit: cover; width:20%">
-                <img src="maxresdefault.jpg" class="img-thumbnail">
+                <img src="maxresdefault.jpg" class="img-thumbnail" data-alt-src="alt.jpg">
             </div>
             <div class="col d-inline-block rounded mx-auto p-3" style="object-fit: cover; width:20%">
-                <img src="maxresdefault.jpg" class="img-thumbnail">
+                <img src="maxresdefault.jpg" class="img-thumbnail" data-alt-src="alt.jpg">
             </div>
             <div class="col d-inline-block rounded mx-auto p-3" style="object-fit: cover; width:20%">
-                <img src="maxresdefault.jpg" class="img-thumbnail">
+                <img src="maxresdefault.jpg" class="img-thumbnail" data-alt-src="alt.jpg">
             </div>
         </div>
         <div class="row-cols-4 mx-auto">
             <div class="col d-inline-block rounded mx-auto p-3" style="object-fit: cover; width:20%">
-                <img src="maxresdefault.jpg" class="img-thumbnail">
+                <img src="maxresdefault.jpg" class="img-thumbnail" data-alt-src="alt.jpg">
             </div>
             <div class="col d-inline-block rounded mx-auto p-3" style="object-fit: cover; width:20%">
-                <img src="maxresdefault.jpg" class="img-thumbnail">
+                <img src="maxresdefault.jpg" class="img-thumbnail" data-alt-src="alt.jpg">
             </div>
             <div class="col d-inline-block rounded mx-auto p-3" style="object-fit: cover; width:20%">
-                <img src="maxresdefault.jpg" class="img-thumbnail">
+                <img src="maxresdefault.jpg" class="img-thumbnail" data-alt-src="alt.jpg">
             </div>
             <div class="col d-inline-block rounded mx-auto p-3" style="object-fit: cover; width:20%">
-                <img src="maxresdefault.jpg" class="img-thumbnail">
+                <img src="maxresdefault.jpg" class="img-thumbnail" data-alt-src="alt.jpg">
             </div>
         </div>
-        <button class="btn btn-primary d-block mb-4 mx-auto">Reset!</button>
+       <!--><button class="btn btn-primary d-block mb-4 mx-auto">Reset!</button>-->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -51,13 +51,25 @@
     <script>
 
         $('document').ready(function () {
-            $('img').on('click', function () {
-                $(this).hide();
-            });
+            $('img').hover(
+                // ¿Como llamar a la funcion sin repetirla?
+                function () {
+                    var main = $(this).attr('src');
+                    var alt = $(this).attr('data-alt-src');
+                    $(this).attr('src', alt);
+                    $(this).attr('data-alt-src', main);
+                },
+                function () { 
+                    var main = $(this).attr('src');
+                    var alt = $(this).attr('data-alt-src');
+                    $(this).attr('src', alt);
+                    $(this).attr('data-alt-src', main);
+                }
+            );
 
-            $('button').on('click', function() {
-                $('img').show();
-            })
+            /* $('button').on('click', function () {
+                 $('img').show();
+             }) */
         });
     </script>
 </body>
